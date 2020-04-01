@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Kotlin Material Design</string>
+    <string name="contentDescription">contentDescription</string>
+    <string name="rotate">Rotate</string>
+    <string name="scale">Scale</string>
+    <string name="fade_in">Fade In</string>
+    <string name="fade_out">Fade Out</string>
+    <string name="scale_rotate">Scale/Rotate</string>
+    <string name="translate">Translate</string>
 </resources>
