@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         val scaleRotateAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_rotate)
         val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
         val fadeOutAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_out)
+        val translateAnimation = AnimationUtils.loadAnimation(this, R.anim.translate)
 
 
         ac_main_btn_fadeIn.setOnClickListener {
@@ -36,6 +37,10 @@ class MainActivity : AppCompatActivity() {
 
         ac_main_btn_scale_rotate.setOnClickListener {
             ac_main_imageView.startAnimation(scaleRotateAnimation)
+        }
+
+        ac_main_btn_translate.setOnClickListener{
+            ac_main_imageView.startAnimation(translateAnimation)
         }
     }
 }
