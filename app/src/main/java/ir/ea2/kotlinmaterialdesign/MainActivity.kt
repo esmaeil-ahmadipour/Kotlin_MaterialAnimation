@@ -14,14 +14,16 @@ class MainActivity : AppCompatActivity() {
         val scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale)
         val rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate)
         val scaleRotateAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_rotate)
+        val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+        val fadeOutAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_out)
 
 
         ac_main_btn_fadeIn.setOnClickListener {
-
+            ac_main_imageView.startAnimation(fadeInAnimation)
         }
 
         ac_main_btn_fadeOut.setOnClickListener {
-
+            ac_main_imageView.startAnimation(fadeOutAnimation)
         }
 
         ac_main_btn_scale.setOnClickListener {
