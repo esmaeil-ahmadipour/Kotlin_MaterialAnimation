@@ -1,5 +1,7 @@
 package ir.ea2.kotlinmaterialdesign
 
+import android.animation.Animator
+import android.animation.AnimatorInflater
 import android.animation.ValueAnimator
 import android.os.Bundle
 import android.util.Log
@@ -14,15 +16,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        valueAnimatorSampleCode()
-
-
-        val scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale)
+//        valueAnimatorSampleCode()
+//        val scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale)
         val rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate)
         val scaleRotateAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_rotate)
         val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
         val fadeOutAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_out)
         val translateAnimation = AnimationUtils.loadAnimation(this, R.anim.translate)
+
+        val scaleAnimator:Animator = AnimatorInflater.loadAnimator(this, R.animator.scale)
 
 
         ac_main_btn_fadeIn.setOnClickListener {
@@ -34,7 +36,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         ac_main_btn_scale.setOnClickListener {
-            ac_main_imageView.startAnimation(scaleAnimation)
+//            ac_main_imageView.startAnimation(scaleAnimation)
+            scaleAnimator.apply {
+                setTarget(ac_main_imageView)
+                start()
+            }
         }
 
         ac_main_btn_rotate.setOnClickListener {
